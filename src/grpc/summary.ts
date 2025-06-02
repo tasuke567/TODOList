@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/consistent-type-definitions */
+
 
 import type {
   UntypedServiceImplementation,
@@ -70,8 +70,11 @@ export interface SummaryServiceDefinition extends ServiceDefinition {
 /* 📦  Minimal runtime helpers (encode/decode no-op)                   */
 /* ------------------------------------------------------------------ */
 
-const noopSer = <T>(_: T) => Buffer.alloc(0);          // 💤
-const noopDe  = <T>(_: Uint8Array) => ({} as T);       // 💤
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+const noopSer = <T>(_: T) => Buffer.alloc(0);
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+const noopDe = <T>(_: Uint8Array) => ({} as T);
+
 
 export const SummaryServiceDefinition: SummaryServiceDefinition = {
   GetStats: {
