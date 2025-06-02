@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "node",      // 👈 critical change
+    "noEmit": true,                  // ts-node can still transpile in-memory
+    "isolatedModules": false         // smoother for ts-node
+  },
+  "include": ["src/grpc/**/*.ts", "src/lib/**/*.ts"]
+}

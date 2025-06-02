@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package summary;
+
+message Empty {}
+
+message HairCount {
+  string color = 1;
+  uint32 count = 2;
+}
+
+message DeptInfo {
+  string name = 1;
+  uint32 male = 2;
+  uint32 female = 3;
+  string ageRange = 4;
+  repeated HairCount hair = 5;
+}
+
+message DeptResponse {
+  repeated DeptInfo departments = 1;
+}
+
+service Summary {
+  rpc GetStats (Empty) returns (DeptResponse);
+}
